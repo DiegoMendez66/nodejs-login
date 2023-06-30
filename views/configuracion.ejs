@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar contraseña</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body style="background-color: #202020;">
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 mt-5">
+                <form action="/configuracion" method="post" class="card card-body px-4 py-5 px-md-5">
+                    <h1 class="text-center">Cambio de contraseña</h1>
+                    <% if (message) { %>
+                        <p style="color: red;"><%= message %></p>
+                    <% } %>
+                    <div class="mb-3 mt-4">
+                        <label for="oldPassword">Contraseña actual</label>
+                        <input type="password" id="oldPassword" name="oldPassword" class="form-control" required>
+                    </div>
+                    <div class="mb-4 mt-2">
+                        <label for="newPassword">Nueba contraseña</label>
+                        <input type="password" id="newPassword" name="newPassword" class="form-control" required>
+                    </div>    
+                    <button type="submit" class="btn btn-primary">
+                        Guardar cambios
+                    </button>
+                    <div class="text-center mt-4">
+                        <p>Regresar: <a href="/login">Iniciar sesión</a></p>  
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
